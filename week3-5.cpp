@@ -5,7 +5,7 @@ using namespace std;
 
 const int N = 1e5 + 5;
 
-int rt, num = 1;
+int rt, num = 1, d[N];
 
 struct node {
     int left, right, value;
@@ -54,6 +54,10 @@ void solve() {
         if (s == "insert") {
             int x;
             cin >> x;
+            if (d[x]) {
+                continue;
+            }
+            d[x] = 1;
             insert(1, x);
         }
     }
